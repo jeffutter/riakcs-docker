@@ -17,11 +17,8 @@ RUN curl http://apt.basho.com/gpg/basho.apt.key | apt-key add -
 RUN bash -c "echo deb http://apt.basho.com $(lsb_release -sc) main > /etc/apt/sources.list.d/basho.list"
 RUN apt-get update
 
-RUN mkdir -p /debs/orig
-RUN mkdir -p /debs/new
+RUN mkdir -p /debs/orig; mkdir -p /debs/new
 RUN cd /debs/orig; apt-get download stanchion riak riak-cs riak-cs-control
-
-#RUN mkdir /var/lib/riak; mkdir /var/lib/riak-cs ; mkdir /var/lib/riak-cs-control ; mkdir /var/lib/stanchion
 
 RUN ulimit -n 4096
 
