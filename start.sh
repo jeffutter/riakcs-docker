@@ -5,9 +5,9 @@
 
 riak start
 sleep 2
+stanchion start
 riak-cs start
 riak-cs-control start
-stanchion start
 
 KEY=`cat /admin_user.json | grep -E -o '"key_id":"[^\"]+"' | sed -e 's/\"//g' | cut -d : -f 2`
 SECRET=`cat /admin_user/json | grep -E -o '"key_secret":"[^\"]+"' | sed -e 's/\"//g' | cut -d : -f 2`

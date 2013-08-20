@@ -2,10 +2,9 @@ perl -pi -e 's/{anonymous_user_creation, false}/{anonymous_user_creation, true}/
 
 riak start
 sleep 2
-riak-cs start
-sleep 2
 stanchion start
 sleep 2
+riak-cs start
 
 sleep 5
 
@@ -16,8 +15,8 @@ SECRET=`cat /admin_user.json | grep -E -o '"key_secret":"[^\"]+"' | sed -e 's/\"
 echo "Admin Key: "$KEY
 echo "Admin Secret: "$SECRET
 
-stanchion stop
 riak-cs stop
+stanchion stop
 riak stop
 
 sleep 3
