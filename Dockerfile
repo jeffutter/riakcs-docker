@@ -43,4 +43,4 @@ EXPOSE 8080
 
 #CMD ["/bin/bash"]
 
-CMD ["/bin/bash /start.sh"]
+CMD ["/bin/bash", "/start.sh"]

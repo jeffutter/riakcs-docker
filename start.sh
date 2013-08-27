@@ -17,6 +17,5 @@ echo "Admin Secret: "$SECRET
 
 # keep script in foreground
 while(true) do
-    sleep 60
-  done
+  sleep 60
 done
