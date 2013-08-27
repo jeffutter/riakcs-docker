@@ -40,11 +40,7 @@ RUN sh /set-keys.sh
 
 EXPOSE 8000
 EXPOSE 8080
-EXPOSE 22
 
-# VOLUME /var/lib/riak
-# VOLUME /var/lib/riak-cs
-# VOLUME /var/lib/riak-cs-control
-# VOLUME /var/lib/stanchion
+#CMD ["/bin/bash"]
 
-CMD ["/bin/bash"]
+CMD ["/bin/bash /start.sh"]
