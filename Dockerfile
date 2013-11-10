@@ -21,17 +21,16 @@ RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get -y install stanchion riak ri
 
 RUN ulimit -n 4096
 
+RUN mkdir -p /var/lib/riak
+
 ADD ./start.sh /
 ADD ./set-keys.sh /
 ADD ./etc /etc
 
 RUN sh /set-keys.sh
 
-RUN mkdir -p /var/lib/riak
-
+EXPOSE 22
 EXPOSE 8000
 EXPOSE 8080
-
-#CMD ["/bin/bash"]
 
 CMD ["/bin/bash", "/start.sh"]
